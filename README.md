@@ -25,10 +25,11 @@ Files
 
 Installation
 
-SPO requires only Python 3.6+ and NumPy.
+SPO requires only Python 3.6+ and NumPy (and Jupyter).
 
-Install NumPy with:
+Install with:
 pip install numpy
+pip install jupyter
 
 ------------------------------------------------------------
 

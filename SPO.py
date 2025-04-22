@@ -44,6 +44,7 @@ class SpiralOptimizer:
         self.best_index = np.argmin(self.values)
         self.center = self.points[self.best_index].copy()
         self.best_value = self.values[self.best_index]
+        print(f'0, x = {self.center},   f(x) = {self.best_value}')
 
 
     '''
@@ -63,6 +64,7 @@ class SpiralOptimizer:
         R[j, i] = np.sin(angle)
         R[j, j] = np.cos(angle)
         return R
+
 
     '''
     Returns the rotation component of the Spiral Matrix described in Section III B. of
@@ -90,7 +92,7 @@ class SpiralOptimizer:
     max_iterations: number of iterations to execute.
     '''
     def run(self, max_iterations):
-        for _ in range(max_iterations):
+        for iteration in range(1, max_iterations+1):
             S = self.spiral_matrix() # compute the Spiral Matrix
             center = self.points[self.best_index] # center = x*
             new_points = np.empty_like(self.points) # create an array to store the new candidate points
@@ -128,6 +130,7 @@ class SpiralOptimizer:
                 self.best_value = new_values[current_best_index]
                 self.best_index = current_best_index
                 self.center = new_points[current_best_index].copy()
+                print(f'{iteration}, x = {self.center},   f(x) = {self.best_value}')
 
         print(f'Minimizer found: {self.center}')
         print(f'Objective value: {self.best_value}')
