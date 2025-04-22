@@ -28,8 +28,7 @@ Installation
 SPO requires only Python 3.6+ and NumPy (and Jupyter).
 
 Install with:
-pip install numpy
-pip install jupyter
+pip install numpy jupyter
 
 ------------------------------------------------------------
 
