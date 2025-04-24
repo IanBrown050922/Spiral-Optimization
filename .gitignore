@@ -42,3 +42,7 @@ coverage.xml
 # mypy
 .mypy_cache/
 .dmypy.json
+
+# misc
+
+junk.txt
